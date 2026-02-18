@@ -3,7 +3,7 @@
 - **Status:** Draft
 - **Authors:** Momo Kornher (@mrgrain), Thorsten Hoeger (@hoegertn)
 - **Created:** 2026-02-16
-- **Discussion:** Slack #projen-contributors
+- **Discussion:** Slack #tmp-projen-github-rfc
 
 ## Summary
 
