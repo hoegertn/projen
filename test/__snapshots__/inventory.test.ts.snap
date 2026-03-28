@@ -229,13 +229,13 @@ exports[`inventory 1`] = `
         "switch": "cdk-test-dependencies",
       },
       {
-        "default": ""2.1.0"",
+        "default": ""2.189.1"",
         "docs": "Minimum version of the AWS CDK to depend on.",
         "featured": false,
         "fullType": {
           "primitive": "string",
         },
-        "initialValue": ""2.1.0"",
+        "initialValue": ""2.189.1"",
         "jsonLike": true,
         "name": "cdkVersion",
         "parent": "AwsCdkDepsCommonOptions",
@@ -316,7 +316,7 @@ exports[`inventory 1`] = `
       },
       {
         "default": "- for CDK 1.x the default is "3.2.27", for CDK 2.x the default is
-"10.0.5".",
+"10.5.1".",
         "docs": "Minimum version of the \`constructs\` library to depend on.",
         "featured": false,
         "fullType": {
@@ -1455,13 +1455,13 @@ exports[`inventory 1`] = `
         "switch": "cdk-test-dependencies",
       },
       {
-        "default": ""2.1.0"",
+        "default": ""2.189.1"",
         "docs": "Minimum version of the AWS CDK to depend on.",
         "featured": false,
         "fullType": {
           "primitive": "string",
         },
-        "initialValue": ""2.1.0"",
+        "initialValue": ""2.189.1"",
         "jsonLike": true,
         "name": "cdkVersion",
         "parent": "AwsCdkDepsCommonOptions",
@@ -1544,7 +1544,7 @@ exports[`inventory 1`] = `
       },
       {
         "default": "- for CDK 1.x the default is "3.2.27", for CDK 2.x the default is
-"10.0.5".",
+"10.5.1".",
         "docs": "Minimum version of the \`constructs\` library to depend on.",
         "featured": false,
         "fullType": {
@@ -3262,13 +3262,13 @@ exports[`inventory 1`] = `
         "switch": "cdk-test-dependencies",
       },
       {
-        "default": ""2.1.0"",
+        "default": ""2.189.1"",
         "docs": "Minimum version of the AWS CDK to depend on.",
         "featured": false,
         "fullType": {
           "primitive": "string",
         },
-        "initialValue": ""2.1.0"",
+        "initialValue": ""2.189.1"",
         "jsonLike": true,
         "name": "cdkVersion",
         "parent": "AwsCdkDepsCommonOptions",
@@ -3402,7 +3402,7 @@ exports[`inventory 1`] = `
       },
       {
         "default": "- for CDK 1.x the default is "3.2.27", for CDK 2.x the default is
-"10.0.5".",
+"10.5.1".",
         "docs": "Minimum version of the \`constructs\` library to depend on.",
         "featured": false,
         "fullType": {
@@ -5481,6 +5481,23 @@ exports[`inventory 1`] = `
         "switch": "scripts",
       },
       {
+        "default": "true",
+        "docs": "Automatically adds an \`awscdk.SingletonFunction\` for each \`.singleton-lambda.ts\` handler in your source tree. If this is disabled, you can manually add an \`awscdk.AutoDiscover\` component to your project.",
+        "featured": false,
+        "fullType": {
+          "primitive": "boolean",
+        },
+        "jsonLike": true,
+        "name": "singletonLambdaAutoDiscover",
+        "optional": true,
+        "parent": "AwsCdkTypeScriptAppOptions",
+        "path": [
+          "singletonLambdaAutoDiscover",
+        ],
+        "simpleType": "boolean",
+        "switch": "singleton-lambda-auto-discover",
+      },
+      {
         "default": ""src"",
         "docs": "Typescript sources directory.",
         "featured": false,
@@ -6508,13 +6525,13 @@ exports[`inventory 1`] = `
         "switch": "cdk-test-dependencies",
       },
       {
-        "default": ""2.1.0"",
+        "default": ""2.189.1"",
         "docs": "Minimum version of the AWS CDK to depend on.",
         "featured": false,
         "fullType": {
           "primitive": "string",
         },
-        "initialValue": ""2.1.0"",
+        "initialValue": ""2.189.1"",
         "jsonLike": true,
         "name": "cdkVersion",
         "parent": "AwsCdkDepsCommonOptions",
@@ -6699,7 +6716,7 @@ exports[`inventory 1`] = `
       },
       {
         "default": "- for CDK 1.x the default is "3.2.27", for CDK 2.x the default is
-"10.0.5".",
+"10.5.1".",
         "docs": "Minimum version of the \`constructs\` library to depend on.",
         "featured": false,
         "fullType": {
@@ -7340,7 +7357,7 @@ exports[`inventory 1`] = `
         "switch": "jsii-release-version",
       },
       {
-        "default": ""~5.8.0"",
+        "default": ""~5.9.0"",
         "docs": "Version of the jsii compiler to use.",
         "featured": false,
         "fullType": {
@@ -8917,6 +8934,23 @@ exports[`inventory 1`] = `
         ],
         "simpleType": "unknown",
         "switch": "scripts",
+      },
+      {
+        "default": "true",
+        "docs": "Automatically adds an \`awscdk.SingletonFunction\` for each \`.singleton-lambda.ts\` handler in your source tree. If this is disabled, you can manually add an \`awscdk.AutoDiscover\` component to your project.",
+        "featured": false,
+        "fullType": {
+          "primitive": "boolean",
+        },
+        "jsonLike": true,
+        "name": "singletonLambdaAutoDiscover",
+        "optional": true,
+        "parent": "AwsCdkConstructLibraryOptions",
+        "path": [
+          "singletonLambdaAutoDiscover",
+        ],
+        "simpleType": "boolean",
+        "switch": "singleton-lambda-auto-discover",
       },
       {
         "default": ""src"",
@@ -15011,7 +15045,7 @@ exports[`inventory 1`] = `
         "switch": "jsii-release-version",
       },
       {
-        "default": ""~5.8.0"",
+        "default": ""~5.9.0"",
         "docs": "Version of the jsii compiler to use.",
         "featured": false,
         "fullType": {
@@ -18170,7 +18204,7 @@ exports[`inventory 1`] = `
         "switch": "jsii-release-version",
       },
       {
-        "default": ""~5.8.0"",
+        "default": ""~5.9.0"",
         "docs": "Version of the jsii compiler to use.",
         "featured": false,
         "fullType": {
@@ -22148,7 +22182,7 @@ exports[`inventory 1`] = `
         "switch": "jsii-release-version",
       },
       {
-        "default": ""~5.8.0"",
+        "default": ""~5.9.0"",
         "docs": "Version of the jsii compiler to use.",
         "featured": false,
         "fullType": {

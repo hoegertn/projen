@@ -6,7 +6,7 @@
 
 Implements GitHub jobs for publishing modules to package managers.
 
-Under the hood, it uses https://github.com/aws/publib
+Under the hood, it uses https://github.com/cdklabs/publib
 
 #### Initializers <a name="Initializers" id="projen.release.Publisher.Initializer"></a>
 
@@ -40,6 +40,7 @@ new release.Publisher(project: Project, options: PublisherOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#projen.release.Publisher.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#projen.release.Publisher.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#projen.release.Publisher.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#projen.release.Publisher.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#projen.release.Publisher.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -62,6 +63,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="projen.release.Publisher.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="projen.release.Publisher.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="projen.release.Publisher.postSynthesize"></a>
 
@@ -440,6 +462,7 @@ options to configure the Release Component.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#projen.release.Release.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#projen.release.Release.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#projen.release.Release.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#projen.release.Release.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#projen.release.Release.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -455,6 +478,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="projen.release.Release.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="projen.release.Release.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="projen.release.Release.postSynthesize"></a>
 
@@ -1836,7 +1880,7 @@ GitHub secret name which contains the GPG private key or file that includes it.
 
 This is used to sign your Maven packages. See instructions.
 
-> [https://github.com/aws/publib#maven](https://github.com/aws/publib#maven)
+> [https://github.com/cdklabs/publib#maven](https://github.com/cdklabs/publib#maven)
 
 ---
 
@@ -1856,7 +1900,7 @@ GitHub secret name which contains the GPG private key or file that includes it.
 This is used to sign your Maven
 packages. See instructions.
 
-> [https://github.com/aws/publib#maven](https://github.com/aws/publib#maven)
+> [https://github.com/cdklabs/publib#maven](https://github.com/cdklabs/publib#maven)
 
 ---
 
@@ -2723,7 +2767,7 @@ GitHub secret name which contains the GPG private key or file that includes it.
 
 This is used to sign your Maven packages. See instructions.
 
-> [https://github.com/aws/publib#maven](https://github.com/aws/publib#maven)
+> [https://github.com/cdklabs/publib#maven](https://github.com/cdklabs/publib#maven)
 
 ---
 
@@ -2741,7 +2785,7 @@ GitHub secret name which contains the GPG private key or file that includes it.
 This is used to sign your Maven
 packages. See instructions.
 
-> [https://github.com/aws/publib#maven](https://github.com/aws/publib#maven)
+> [https://github.com/cdklabs/publib#maven](https://github.com/cdklabs/publib#maven)
 
 ---
 
@@ -3228,7 +3272,7 @@ The artifact is expected to include a subdirectory for each release target:
 `go` (GitHub), `dotnet` (NuGet), `java` (Maven), `js` (npm), `python`
 (PyPI).
 
-> [https://github.com/aws/publib](https://github.com/aws/publib)
+> [https://github.com/cdklabs/publib](https://github.com/cdklabs/publib)
 
 ---
 

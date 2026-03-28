@@ -74,7 +74,7 @@ export interface PublisherOptions {
    * `go` (GitHub), `dotnet` (NuGet), `java` (Maven), `js` (npm), `python`
    * (PyPI).
    *
-   * @see https://github.com/aws/publib
+   * @see https://github.com/cdklabs/publib
    */
   readonly artifactName: string;
 
@@ -157,7 +157,7 @@ export interface PublisherOptions {
 /**
  * Implements GitHub jobs for publishing modules to package managers.
  *
- * Under the hood, it uses https://github.com/aws/publib
+ * Under the hood, it uses https://github.com/cdklabs/publib
  */
 export class Publisher extends Component {
   public static readonly PUBLISH_GIT_TASK_NAME = "publish:git";
@@ -773,7 +773,7 @@ export class Publisher extends Component {
       const steps: JobStep[] = [
         {
           name: "Download build artifacts",
-          uses: "actions/download-artifact@v5",
+          uses: "actions/download-artifact@v8",
           with: {
             name: BUILD_ARTIFACT_NAME,
             path: ARTIFACTS_DOWNLOAD_DIR, // this must be "dist" for publib
@@ -1268,7 +1268,7 @@ export interface MavenPublishOptions extends CommonPublishOptions {
    * it. This is used to sign your Maven
    * packages. See instructions.
    *
-   * @see https://github.com/aws/publib#maven
+   * @see https://github.com/cdklabs/publib#maven
    * @default "MAVEN_GPG_PRIVATE_KEY" or not set when using GitHub Packages
    */
   readonly mavenGpgPrivateKeySecret?: string;
@@ -1277,7 +1277,7 @@ export interface MavenPublishOptions extends CommonPublishOptions {
    * GitHub secret name which contains the GPG private key or file that includes
    * it. This is used to sign your Maven packages. See instructions.
    *
-   * @see https://github.com/aws/publib#maven
+   * @see https://github.com/cdklabs/publib#maven
    * @default "MAVEN_GPG_PRIVATE_KEY_PASSPHRASE" or not set when using GitHub Packages
    */
   readonly mavenGpgPrivateKeyPassphrase?: string;

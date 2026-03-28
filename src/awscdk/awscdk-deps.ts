@@ -10,7 +10,7 @@ export interface AwsCdkDepsCommonOptions {
   /**
    * Minimum version of the AWS CDK to depend on.
    *
-   * @default "2.1.0"
+   * @default "2.189.1"
    */
   readonly cdkVersion: string;
 
@@ -30,7 +30,7 @@ export interface AwsCdkDepsCommonOptions {
    * Minimum version of the `constructs` library to depend on.
    *
    * @default - for CDK 1.x the default is "3.2.27", for CDK 2.x the default is
-   * "10.0.5".
+   * "10.5.1".
    */
   readonly constructsVersion?: string;
 
@@ -264,7 +264,7 @@ export abstract class AwsCdkDeps extends Component {
       );
     }
 
-    const defaultVersion = this.cdkMajorVersion === 1 ? "3.2.27" : "10.0.5";
+    const defaultVersion = this.cdkMajorVersion === 1 ? "3.2.27" : "10.5.1";
     const versionRequirement = `^${requestedVersion ?? defaultVersion}`;
 
     const constructsMajorVersion = semver.minVersion(versionRequirement)?.major;
@@ -417,13 +417,24 @@ function cdkVersionOfPackage(packageName: string) {
  * both for v1 and v2.
  */
 const AWS_CDK_V1_V2_SCOPED_PACKAGES = [
-  "@aws-cdk/cfnspec",
+  // aws/aws-cdk
+  // @see https://github.com/aws/aws-cdk/tree/main/packages/%40aws-cdk
+  "@aws-cdk/assert", // deprecated
+  "@aws-cdk/cfn-property-mixins",
+  "@aws-cdk/cfnspec", // deprecated
   "@aws-cdk/cx-api",
+  "@aws-cdk/mixins-preview",
   "@aws-cdk/region-info",
+
+  // aws/aws-cdk-cli
+  // @see https://github.com/aws/aws-cdk-cli/tree/main/packages/%40aws-cdk
+  "@aws-cdk/cdk-assets-lib",
+  "@aws-cdk/cli-plugin-contract",
+  "@aws-cdk/cloud-assembly-api",
   "@aws-cdk/cloud-assembly-schema",
-  "@aws-cdk/assert",
   "@aws-cdk/cloudformation-diff",
   "@aws-cdk/integ-runner",
+  "@aws-cdk/toolkit-lib",
 ];
 
 function determineFrameworkVersion(options: AwsCdkDepsOptions) {

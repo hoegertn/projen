@@ -5,7 +5,11 @@ import {
   CdkFeatureFlags,
   LambdaRuntime,
 } from "../../src/awscdk";
-import { FEATURE_FLAGS_V1, FEATURE_FLAGS_V2 } from "../../src/awscdk/internal";
+import {
+  FEATURE_FLAGS_V1,
+  FEATURE_FLAGS_V2,
+  toDeterministicSingletonUuid,
+} from "../../src/awscdk/internal";
 import { NodePackageManager } from "../../src/javascript";
 import { mkdtemp, SynthOutput, synthSnapshot } from "../util";
 
@@ -180,6 +184,31 @@ describe("lambda functions", () => {
       snapshot[".projen/tasks.json"].tasks["bundle:src/my"],
     ).toBeUndefined();
   });
+
+  test("singleton lambda auto-discover uses deterministic UUID", () => {
+    const outdir = mkdtemp();
+    mkdirSync(join(outdir, "src"));
+    writeFileSync(join(outdir, "src", "my.singleton-lambda.ts"), "// dummy");
+
+    const project = new AwsCdkTypeScriptApp({
+      name: "hello",
+      outdir,
+      defaultReleaseBranch: "main",
+      cdkVersion: "1.100.0",
+      lambdaAutoDiscover: false,
+      singletonLambdaAutoDiscover: true,
+    });
+
+    const snapshot = synthSnapshot(project);
+    const generatedSource = snapshot["src/my-function.ts"];
+
+    expect(generatedSource).toContain(
+      "export class MyFunction extends lambda.SingletonFunction {",
+    );
+    expect(generatedSource).toContain(
+      `uuid: "${toDeterministicSingletonUuid("hello", "src/my.singleton-lambda.ts")}",`,
+    );
+  });
 });
 
 describe("synth", () => {
@@ -305,7 +334,7 @@ describe("CDK v2", () => {
   });
   it("has a constructs runtime depdendency", () => {
     expect(snapshot["package.json"].dependencies).toMatchObject({
-      constructs: "^10.0.5",
+      constructs: "^10.5.1",
     });
   });
   it("has the correct import for the sample file", () => {
